@@ -1,0 +1,52 @@
+127.-ID 127,Nombre: Colorantes,Estado: Líquido,Caducidad: 10/11/2023,Cantidad: 8
+127.-ID 127,Nombre: Indicadores de pH,Estado: Sólido,Caducidad: 15/12/2023,Cantidad: 3
+127.-ID 127,Nombre: Reactivos de tinción,Estado: Líquido,Caducidad: 20/01/2024,Cantidad: 6
+127.-ID 127,Nombre: Soluciones de cultivo,Estado: Líquido,Caducidad: 25/02/2024,Cantidad: 4
+127.-ID 127,Nombre: Agentes de precipitación,Estado: Sólido,Caducidad: 30/03/2024,Cantidad: 5
+127.-ID 127,Nombre: Antisépticos y desinfectantes,Estado: Líquido,Caducidad: 05/04/2024,Cantidad: 7
+127.-ID 127,Nombre: Antisépticos,Estado: Líquido,Caducidad: 10/05/2023,Cantidad: 3
+127.-ID 127,Nombre: Ácidos,Estado: Sólido,Caducidad: 25/06/2023,Cantidad: 7
+127.-ID 127,Nombre: Bases,Estado: Líquido,Caducidad: 30/07/2023,Cantidad: 4
+127.-ID 127,Nombre: Solventes,Estado: Líquido,Caducidad: 15/08/2023,Cantidad: 6
+127.-ID 127,Nombre: Agentes de tinción,Estado: Sólido,Caducidad: 20/09/2023,Cantidad: 5
+127.-ID 127,Nombre: Soluciones buffer,Estado: Líquido,Caducidad: 25/10/2023,Cantidad: 2
+128.-ID 128,Nombre: Antibióticos para cultivos celulares,Estado: Líquido,Caducidad: 10/11/2023,Cantidad: 8
+128.-ID 128,Nombre: Soluciones para capacitación espermática,Estado: Líquido,Caducidad: 15/12/2023,Cantidad: 3
+128.-ID 128,Nombre: Medios de cultivo para ovocitos,Estado: Líquido,Caducidad: 20/01/2024,Cantidad: 6
+128.-ID 128,Nombre: Antioxidantes para protección de gametos,Estado: Líquido,Caducidad: 25/02/2024,Cantidad: 4
+128.-ID 128,Nombre: Soluciones de criopreservación,Estado: Líquido,Caducidad: 30/03/2024,Cantidad: 5
+128.-ID 128,Nombre: Hormonas reproductivas,Estado: Líquido,Caducidad: 15/06/2023,Cantidad: 5
+128.-ID 128,Nombre: Medios de cultivo especializados,Estado: Líquido,Caducidad: 20/07/2023,Cantidad: 3
+128.-ID 128,Nombre: Antisépticos para procedimientos,Estado: Líquido,Caducidad: 25/08/2023,Cantidad: 4
+128.-ID 128,Nombre: Soluciones de lavado de gametos,Estado: Líquido,Caducidad: 30/09/2023,Cantidad: 2
+128.-ID 128,Nombre: Reactivos para pruebas de fertilidad,Estado: Sólido,Caducidad: 05/10/2023,Cantidad: 6
+129.-ID 129,Nombre: Vitaminas para suplementos,Estado: Sólido,Caducidad: 15/06/2023,Cantidad: 5
+129.-ID 129,Nombre: Minerales quelatados,Estado: Sólido,Caducidad: 20/07/2023,Cantidad: 3
+129.-ID 129,Nombre: Aminoácidos esenciales,Estado: Sólido,Caducidad: 25/08/2023,Cantidad: 4
+129.-ID 129,Nombre: Probióticos para alimentos balanceados,Estado: Líquido,Caducidad: 30/09/2023,Cantidad: 2
+129.-ID 129,Nombre: Enzimas para mejorar la digestibilidad,Estado: Líquido,Caducidad: 05/10/2023,Cantidad: 6
+129.-ID 129,Nombre: Aditivos para piensos,Estado: Sólido,Caducidad: 10/11/2023,Cantidad: 8
+129.-ID 129,Nombre: Ácidos grasos omega-3,Estado: Líquido,Caducidad: 15/12/2023,Cantidad: 3
+129.-ID 129,Nombre: Antioxidantes naturales,Estado: Sólido,Caducidad: 20/01/2024,Cantidad: 6
+129.-ID 129,Nombre: Probióticos para rumiantes,Estado: Líquido,Caducidad: 25/02/2024,Cantidad: 4
+129.-ID 129,Nombre: Minerales para fortificación,Estado: Sólido,Caducidad: 30/03/2024,Cantidad: 5
+130.-ID 130,Nombre: Antibióticos para peces,Estado: Líquido,Caducidad: 15/06/2023,Cantidad: 5
+130.-ID 130,Nombre: Vitaminas para alimentos acuícolas,Estado: Sólido,Caducidad: 20/07/2023,Cantidad: 3
+130.-ID 130,Nombre: Oxígeno disuelto,Estado: Gas,Caducidad: 25/08/2023,Cantidad: 4
+130.-ID 130,Nombre: Desinfectantes para tanques,Estado: Líquido,Caducidad: 30/09/2023,Cantidad: 2
+130.-ID 130,Nombre: Sal para aclimatación,Estado: Sólido,Caducidad: 05/10/2023,Cantidad: 6
+130.-ID 130,Nombre: Probióticos para peces,Estado: Líquido,Caducidad: 10/11/2023,Cantidad: 8
+130.-ID 130,Nombre: Alimento vivo,Estado: Vivo,Caducidad: N/A,Cantidad: Variable
+130.-ID 130,Nombre: Medicamentos para enfermedades acuáticas,Estado: Líquido,Caducidad: 15/12/2023,Cantidad: 3
+130.-ID 130,Nombre: pH del agua,Estado: Líquido,Caducidad: 20/01/2024,Cantidad: 6
+130.-ID 130,Nombre: Test de calidad del agua,Estado: Sólido,Caducidad: 25/02/2024,Cantidad: 4
+131.-ID 131,Nombre: Fertilizantes para pastos,Estado: Solido,Caducidad: 15/06/2023,Cantidad: 5
+131.-ID 131,Nombre: Herbicidas selectivos,Estado: Liquido,Caducidad: 20/07/2023,Cantidad: 3
+131.-ID 131,Nombre: Analisis de suelos,Estado: Solido,Caducidad: 25/08/2023,Cantidad: 4
+131.-ID 131,Nombre: Semillas mejoradas,Estado: Solido,Caducidad: 30/09/2023,Cantidad: 2
+131.-ID 131,Nombre: Insecticidas para plagas,Estado: Liquido,Caducidad: 05/10/2023,Cantidad: 6
+131.-ID 131,Nombre: Fungicidas para hongos,Estado: Liquido,Caducidad: 10/11/2023,Cantidad: 8
+131.-ID 131,Nombre: Micronutrientes para pastos,Estado: Solido,Caducidad: 15/12/2023,Cantidad: 3
+131.-ID 131,Nombre: Control de malezas,Estado: Liquido,Caducidad: 20/01/2024,Cantidad: 6
+131.-ID 131,Nombre: Abonos organicos,Estado: Solido,Caducidad: 25/02/2024,Cantidad: 4
+131.-ID 131,Nombre: Tratamientos para forraje,Estado: Liquido,Caducidad: 30/03/2024,Cantidad: 5

@@ -1,0 +1,20 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| ID: 127| Nombre: Laboratorio de Sanidad Animal| Aforo: 22| Encargado: M. V. Lisandro Roger Tafur Zevallos
+| Facultad: Zootecnia| Ubicacion: Modulo de la Facultad de Zootecnia, primer piso| Facultades que atiende: Atiende a 1 Facultad de Pregrado y 2 Cursos de Posgrado
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| ID: 128| Nombre: Laboratorio de reproduccion e inseminacion artificial| Aforo: 48| Encargado: Ing. M. Sc. Jorge Daniel Ju�rez Moreno
+| Facultad: Zootecnia| Ubicacion: Frente al modulo de la Facultad de Zootecnia, frente al Pabellon de Aulas Gallito de las Rocas.| Facultades que atiende: Atiende a 1 Facultad de Pregrado y 1 Curso de Posgrado
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| ID: 129| Nombre: Laboratorio de nutricion animal| Aforo: 12| Encargado: Dr. Rizal Alcides Robles Huaynate
+| Facultad: Zootecnia| Ubicacion: Modulo de Laboratorios Numero 3, segundo piso, al costado del LA08 Laboratorio de Microscop�a.| Facultades que atiende: Atiende a 1 Facultad de Pregrado y 2 Cursos de Posgrado
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| ID: 130| Nombre: Laboratorio de Psicultura| Aforo: 66| Encargado: Blgo. Pesq. Carlos Alvarez Janampa
+| Facultad: Zootecnia| Ubicacion: A espaldas de la Facultad de Zootecnia, al costado del Aula El Granjero.| Facultades que atiende: Atiende a 1 Facultad de Pregrado y 1 Curso de Posgrado
+------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+| ID: 131| Nombre: Laboratorio de Pastos| Aforo: 86| Encargado: Ing. M. Sc. Rafael Rene Robles Rodriguez
+| Facultad: Zootecnia| Ubicacion: Al costado del LA28 Laboratorio de Reproduccion e Inseminacion Artificial, frente al Pabell�n de Aulas Gallito de las Rocas.| Facultades que atiende: Atiende a 1 Facultad de Pregrado y 1 Curso de Posgrado
+------------------------------------------------------------------------------------------------------------------------------------------------------
