@@ -27,9 +27,9 @@ vector<Laboratorio> laboratorios;
 void Laboratorio::GuardarID(const vector<Laboratorio> &labo)
 {
     ofstream archivo("IDlabo.txt", ios::app);
-    for (const Laboratorio &labo: laboratorios)
+    for (const Laboratorio &labo : laboratorios)
     {
-        archivo << labo.codigo <<" | "<<labo.nombre<< endl;
+        archivo << labo.codigo << " | " << labo.nombre << endl;
     }
     archivo.close();
 }
@@ -83,7 +83,7 @@ void Laboratorio::IngresodeLaboratorios(vector<Laboratorio> &labo)
 }
 void Laboratorio::MostrarLaboratorios(const vector<Laboratorio> &labo)
 {
-    cout<<"**********Laboratorios**********"<<endl;
+    cout << "**********Laboratorios**********" << endl;
     ifstream archivo("laboratorios.txt");
     string texto;
     while (!archivo.eof())
