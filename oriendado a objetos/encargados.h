@@ -50,6 +50,7 @@ void Encargado::IngresodeEncargados(vector<Encargado> &enca)
 }
 void Encargado::MostrarEncargados(const vector<Encargado> &enca)
 {
+    cout<<"***ENCARGADOS REGISTRADOS***"<<endl;
     ifstream archivo("encargados.txt");
     string texto;
     while (!archivo.eof())

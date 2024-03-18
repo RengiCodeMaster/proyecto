@@ -5,7 +5,6 @@
 #include "encargados.h"
 #include "elementos.h"
 #include "equipos.h"
-#include "login.h"
 #include "laboratorios.h"
 using namespace std;
 void salir()
@@ -19,7 +18,6 @@ void menu1()
     vector<Elementos> elementos;
     vector<Equipo> equipos;
     vector<Laboratorio> laboratorios;
-    vector<Login> login;
     cout << "\033[1;91m--------------------------------------------------------------------------------\033[0m" << endl;
     cout << "\033[1;31mBienvenido al sistema de laboratorios\033[0m" << endl;
     cout << "\033[1;91m--------------------------------------------------------------------------------\033[0m" << endl;
@@ -37,6 +35,7 @@ void menu1()
 
 int main()
 {
+    setlocale(LC_ALL, "spanish.UTF-8");
     int opcion;
     do
     {
@@ -84,6 +83,8 @@ int main()
         {
             system("cls");
             Elementos elem;
+            Laboratorio labo;
+            labo.MostraID(laboratorios);
             elem.MostrarElementosporCodigo(elementos);
             break;
         }
@@ -91,6 +92,8 @@ int main()
         {
             system("cls");
             Equipo equi;
+            Laboratorio labo;
+            labo.MostraID(laboratorios);
             equi.MostrarEquiposporID(equipos);
             break;
         }
@@ -115,6 +118,7 @@ int main()
         }
         }
     } while (opcion != 9);
+    system("cls");
 
     return 0;
 }

@@ -51,6 +51,7 @@ void Equipo::IngresodeEquipos(vector<Equipo> &equi)
 }
 void Equipo::MostrarEquiposporID(const vector<Equipo> &equi)
 {
+
     ifstream archivo("equipos.txt");
     if (!archivo.is_open())
     {

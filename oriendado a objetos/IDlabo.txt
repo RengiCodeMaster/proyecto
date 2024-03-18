@@ -1,0 +1,12 @@
+120 | laboratorio de redes
+125 | laboratorio de fisica
+130 | laboratorio de química
+140 | laboratorio de biología
+135 | laboratorio de informática
+150 | laboratorio de electrónica
+155 | laboratorio de robótica
+160 | laboratorio de matemáticas
+145 | laboratorio de geología
+165 | laboratorio de óptica
+170 | laboratorio de ingeniería
+175 | laboratorio de microbiología

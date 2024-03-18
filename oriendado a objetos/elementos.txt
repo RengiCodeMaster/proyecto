@@ -1,0 +1,1 @@
+123.-ID 123,Nombre: aciso,Estado: bueno,Caducidad: 02/03/2024,Cantidad: 2

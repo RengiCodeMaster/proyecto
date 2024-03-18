@@ -19,16 +19,37 @@ public:
     Laboratorio() : aforo(), codigo(), nombre(), encargado(), facultad(), ubicacion(), facultadesqueAtiende() {}
     void GuardarLaboratorios(const vector<Laboratorio> &labo);
     void GuardarID(const vector<Laboratorio> &labo);
+    void MostraID(const vector<Laboratorio> &labo);
     void IngresodeLaboratorios(vector<Laboratorio> &labo);
     void MostrarLaboratorios(const vector<Laboratorio> &labo);
 };
 vector<Laboratorio> laboratorios;
+void Laboratorio::GuardarID(const vector<Laboratorio> &labo)
+{
+    ofstream archivo("IDlabo.txt", ios::app);
+    for (const Laboratorio &labo: laboratorios)
+    {
+        archivo << labo.codigo <<" | "<<labo.nombre<< endl;
+    }
+    archivo.close();
+}
+void Laboratorio::MostraID(const vector<Laboratorio> &labo)
+{
+    ifstream archivo("IDlabo.txt");
+    string texto;
+    while (!archivo.eof())
+    {
+        getline(archivo, texto);
+        cout << texto << endl;
+    }
+    archivo.close();
+}
 void Laboratorio::GuardarLaboratorios(const vector<Laboratorio> &labo)
 {
     ofstream archivo("laboratorios.txt", ios::app);
-    for (const Laboratorio &laboratorio : labo)
+    for (const Laboratorio &labo : laboratorios)
     {
-        archivo << "|Aforo: " << laboratorio.aforo << "|Codigo: " << laboratorio.codigo << "|Nombre: " << laboratorio.nombre << "|Encargado: " << laboratorio.encargado << "|Facultad: " << laboratorio.facultad << "|Ubicacion: " << laboratorio.ubicacion << "|Facultades que atiende: " << laboratorio.facultadesqueAtiende << endl;
+        archivo << "|Aforo: " << labo.aforo << "|Codigo: " << labo.codigo << "|Nombre: " << labo.nombre << "|Encargado: " << labo.encargado << "|Facultad: " << labo.facultad << "|Ubicacion: " << labo.ubicacion << "|Facultades que atiende: " << labo.facultadesqueAtiende << endl;
     }
     archivo.close();
 }
@@ -58,9 +79,11 @@ void Laboratorio::IngresodeLaboratorios(vector<Laboratorio> &labo)
         laboratorios.push_back(labo);
     }
     Laboratorio::GuardarLaboratorios(laboratorios);
+    Laboratorio::GuardarID(laboratorios);
 }
 void Laboratorio::MostrarLaboratorios(const vector<Laboratorio> &labo)
 {
+    cout<<"**********Laboratorios**********"<<endl;
     ifstream archivo("laboratorios.txt");
     string texto;
     while (!archivo.eof())

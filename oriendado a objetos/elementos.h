@@ -80,6 +80,7 @@ void Elementos::MostrarElementosporCodigo(const vector<Elementos> &elem)
         }
         if (!encontrado)
         {
+            
             cout << "No se encontraron equipos registrados con el ID " << id << "." << endl;
         }
     }
