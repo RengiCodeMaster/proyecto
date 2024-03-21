@@ -1,6 +1,1 @@
-|ID: 123|Nombres y Apellidos: juan manuel rengifo fretel|Numero: 98156161|Laboratorio Asignado: laboratorio de redes
-|ID: 1651|Nombres y Apellidos: ndnopfnovfplïvmvv|Numero: 6161561|Laboratorio Asignado: vfvdvfd
-|ID: 7845|Nombres y Apellidos: nfbfdsfbkflsdnf|Numero: 44949|Laboratorio Asignado: fdsfdnfijkl¤
-|ID: 161|Nombres y Apellidos: fndfjkbdfk|Numero: 489448|Laboratorio Asignado: finsdonfpnf 
-|ID: ctvbyuni|Nombres y Apellidos: opioubhygtfrdfygubhnjikl|Numero: kmjnihbyugctfd|Laboratorio Asignado: kimjuhygtfrd
-|ID: ojihugyftydrste|Nombres y Apellidos: ,mjhugyft|Numero: ,kmjnhbgyftrdteszfcbvnhmj|Laboratorio Asignado: kjhgfu
+|ID: 123|Nombres y Apellidos: Juan Manuel Rengifo Fretel|Numero: 947442007|Laboratorio Asignado: Laboratorio de Redes y Seguridad

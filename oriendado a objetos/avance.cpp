@@ -2,10 +2,8 @@
 #include <vector>
 #include <limits>
 #include <fstream>
-#include "encargados.h"
-#include "elementos.h"
-#include "equipos.h"
 #include "laboratorios.h"
+#include"GestorLaboratorio.h"
 using namespace std;
 int opcion;
 void salir()
@@ -33,6 +31,11 @@ void menu1()
 
 int main()
 {
+    vector<Encargado> encargados;
+    vector<Elementos> elementos;
+    vector<Equipo> equipos;
+    vector<Laboratorio> laboratorios;
+
     setlocale(LC_ALL, "spanish.UTF-8");
     do
     {
@@ -47,65 +50,63 @@ int main()
             system("cls");
             Encargado enca;
             enca.IngresodeEncargados(encargados);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 2:
         {
             system("cls");
-            Laboratorio labo;
+            ControldeSistema labo;
             labo.IngresodeLaboratorios(laboratorios);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 3:
         {
-            Elementos elem;
             system("cls");
+            PrivilegiosElemento elem;
             elem.IngresodeElementos(elementos);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 4:
         {
-            Equipo equi;
             system("cls");
+            PrivilegiosEquipos equi;
             equi.IngresodeEquipos(equipos);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 5:
         {
-            Laboratorio labo;
             system("cls");
+            ControldeSistema labo;
             labo.MostrarLaboratorios(laboratorios);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 6:
         {
-            Elementos elem;
-            Laboratorio labo;
-            system("cls");
+            ControldeSistema labo;
             labo.MostraID(laboratorios);
+            PrivilegiosElemento elem;
             elem.MostrarElementosporCodigo(elementos);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 7:
         {
-            Equipo equi;
-            Laboratorio labo;
-            system("cls");
+            ControldeSistema labo;
             labo.MostraID(laboratorios);
+            PrivilegiosEquipos equi;
             equi.MostrarEquiposporID(equipos);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
@@ -114,7 +115,7 @@ int main()
             Encargado enca;
             system("cls");
             enca.MostrarEncargados(encargados);
-            cout << "\nPresione 1 para volver al menu o 0 para salir del sistema: ";
+            cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }

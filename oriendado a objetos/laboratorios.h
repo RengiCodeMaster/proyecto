@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
-#include <limits>
 #include <fstream>
+#include <limits>
 using namespace std;
 
 class Laboratorio
 {
-private:
+protected:
     string aforo;
     string codigo;
     string nombre;
@@ -17,79 +17,109 @@ private:
 
 public:
     Laboratorio() : aforo(), codigo(), nombre(), encargado(), facultad(), ubicacion(), facultadesqueAtiende() {}
-    void GuardarLaboratorios(const vector<Laboratorio> &labo);
-    void GuardarID(const vector<Laboratorio> &labo);
-    void MostraID(const vector<Laboratorio> &labo);
-    void IngresodeLaboratorios(vector<Laboratorio> &labo);
-    void MostrarLaboratorios(const vector<Laboratorio> &labo);
+
+    Laboratorio(const string &codigo, const string &nombre, const string &encargado, const string &facultad, const string &ubicacion, const string &facultadesqueAtiende)
+        : codigo(codigo), nombre(nombre), encargado(encargado), facultad(facultad), ubicacion(ubicacion), facultadesqueAtiende(facultadesqueAtiende) {}
+
+    string getAforo() const { return aforo; }
+    string getCodigo() const { return codigo; }
+    string getNombre() const { return nombre; }
+    string getEncargado() const { return encargado; }
+    string getFacultad() const { return facultad; }
+    string getUbicacion() const { return ubicacion; }
+    string getFacultadesqueAtiende() const { return facultadesqueAtiende; }
 };
-vector<Laboratorio> laboratorios;
-void Laboratorio::GuardarID(const vector<Laboratorio> &labo)
+
+class OperacionLaboratorio
 {
-    ofstream archivo("IDlabo.txt", ios::app);
-    for (const Laboratorio &labo : laboratorios)
-    {
-        archivo << labo.codigo << " | " << labo.nombre << endl;
-    }
-    archivo.close();
-}
-void Laboratorio::MostraID(const vector<Laboratorio> &labo)
+public:
+    virtual void IngresodeLaboratorios(vector<Laboratorio> &laboratorios) = 0;
+    virtual void GuardarLaboratorios(const vector<Laboratorio> &laboratorios) = 0;
+    virtual void GuardarID(const vector<Laboratorio> &laboratorios) = 0;
+    virtual void MostraID(const vector<Laboratorio> &laboratorios) = 0;
+    virtual void MostrarLaboratorios(const vector<Laboratorio> &laboratorios) = 0;
+};
+
+class ControldeSistema : public Laboratorio, public OperacionLaboratorio
 {
-    ifstream archivo("IDlabo.txt");
-    string texto;
-    while (!archivo.eof())
+public:
+    void IngresodeLaboratorios(vector<Laboratorio> &laboratorios) override
     {
-        getline(archivo, texto);
-        cout << texto << endl;
+        int x ;
+        cout << "Ingrese el numero de laboratorios que desea ingresar: ";
+        cin >> x;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        for (int i = 0; i < x; ++i)
+        {
+            string codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende;
+            cout << "Ingrese los datos del laboratorio #" << (i + 1) << endl;
+            cout << "Ingrese el codigo laboratorio: ";
+            getline(cin, codigo);
+            cout << "Ingrese el Nombre del Laboratorio: ";
+            getline(cin, nombre);
+            cout << "Ingrese el Encargado del Laboratorio: ";
+            getline(cin, encargado);
+            cout << "Ingrese a que Facultad pertenece: ";
+            getline(cin, facultad);
+            cout << "Ingrese la Ubicacion del Laboratorio: ";
+            getline(cin, ubicacion);
+            cout << "Facultades que atiende: ";
+            getline(cin, facultadesqueAtiende);
+            laboratorios.emplace_back(codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende);
+        }
+        GuardarLaboratorios(laboratorios);
+        GuardarID(laboratorios);
     }
-    archivo.close();
-}
-void Laboratorio::GuardarLaboratorios(const vector<Laboratorio> &labo)
-{
-    ofstream archivo("laboratorios.txt", ios::app);
-    for (const Laboratorio &labo : laboratorios)
+
+    void GuardarLaboratorios(const vector<Laboratorio> &laboratorios) override
     {
-        archivo << "|Aforo: " << labo.aforo << "|Codigo: " << labo.codigo << "|Nombre: " << labo.nombre << "|Encargado: " << labo.encargado << "|Facultad: " << labo.facultad << "|Ubicacion: " << labo.ubicacion << "|Facultades que atiende: " << labo.facultadesqueAtiende << endl;
+        ofstream archivo("laboratorios.txt", ios::app);
+        for (const Laboratorio &labo : laboratorios)
+        {
+            archivo << "-----------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+            archivo << labo.getCodigo() << "|Nombre: " << labo.getNombre() << "|Encargado: " << labo.getEncargado() << "|Facultad: " << labo.getFacultad() << endl;
+            archivo << labo.getUbicacion() << "|Facultades que atiende: " << labo.getFacultadesqueAtiende() << endl;
+            archivo << "-----------------------------------------------------------------------------------------------------------------------------------------------" << endl;
+        }
+        archivo.close();
     }
-    archivo.close();
-}
-void Laboratorio::IngresodeLaboratorios(vector<Laboratorio> &labo)
-{
-    int x;
-    cout << "Ingrese el numero de laboratorios que desea registrar: ";
-    cin >> x;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    for (int i = 0; i < x; i++)
+
+    void GuardarID(const vector<Laboratorio> &laboratorios) override
     {
-        Laboratorio labo;
-        cout << "Ingrese el aforo del laboratorio nuemero " << i + 1 << ": ";
-        getline(cin, labo.aforo);
-        cout << "Ingrese el codigo del laboratorio numero " << i + 1 << ": ";
-        getline(cin, labo.codigo);
-        cout << "Ingrese el nombre del laboratorio numero " << i + 1 << ": ";
-        getline(cin, labo.nombre);
-        cout << "Ingrese el encargado del laboratorio: ";
-        getline(cin, labo.encargado);
-        cout << "Ingrese la facultad a la que pertenece el laboratorio: ";
-        getline(cin, labo.facultad);
-        cout << "Ingrese la ubicacion del laboratorio: ";
-        getline(cin, labo.ubicacion);
-        cout << "Ingrese las facultades que atiende el laboratorio: ";
-        getline(cin, labo.facultadesqueAtiende);
-        laboratorios.push_back(labo);
+        
+        ofstream archivo("IDyNombre.txt", ios::app);
+        for (const Laboratorio &labo : laboratorios)
+        {
+            archivo << labo.getCodigo() << " | " << labo.getNombre() << endl;
+        }
+        archivo.close();
     }
-    Laboratorio::GuardarLaboratorios(laboratorios);
-    Laboratorio::GuardarID(laboratorios);
-}
-void Laboratorio::MostrarLaboratorios(const vector<Laboratorio> &labo)
-{
-    cout << "**********Laboratorios**********" << endl;
-    ifstream archivo("laboratorios.txt");
-    string texto;
-    while (!archivo.eof())
+
+    void MostraID(const vector<Laboratorio> &laboratorios) override
     {
-        getline(archivo, texto);
-        cout << texto << endl;
+        cout << "\033[1;31m***LABORATORIOS DISPONIBLES***\033[0m" << endl;
+        ifstream archivo("IDyNombre.txt");
+        string texto;
+        while (!archivo.eof())
+        {
+            getline(archivo, texto);
+            cout << texto << endl;
+        }
+        archivo.close();
     }
-    archivo.close();
-}
+
+    void MostrarLaboratorios(const vector<Laboratorio> &laboratorios) override
+    {
+        cout << "\033[1;31m***LABORATORIOS DISPONIBLES***\033[0m" << endl;
+
+        ifstream archivo("laboratorios.txt");
+        string texto;
+        while (!archivo.eof())
+        {
+            getline(archivo, texto);
+            cout << "\033[1;97m" << texto << "\033[0m"<< endl;
+        }
+        archivo.close();
+    }
+};
