@@ -45,31 +45,54 @@ class ControldeSistema : public Laboratorio, public OperacionLaboratorio
 public:
     void IngresodeLaboratorios(vector<Laboratorio> &laboratorios) override
     {
-        int x ;
-        cout << "Ingrese el numero de laboratorios que desea ingresar: ";
-        cin >> x;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-        for (int i = 0; i < x; ++i)
+        try
         {
-            string codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende;
-            cout << "Ingrese los datos del laboratorio #" << (i + 1) << endl;
-            cout << "Ingrese el codigo laboratorio: ";
-            getline(cin, codigo);
-            cout << "Ingrese el Nombre del Laboratorio: ";
-            getline(cin, nombre);
-            cout << "Ingrese el Encargado del Laboratorio: ";
-            getline(cin, encargado);
-            cout << "Ingrese a que Facultad pertenece: ";
-            getline(cin, facultad);
-            cout << "Ingrese la Ubicacion del Laboratorio: ";
-            getline(cin, ubicacion);
-            cout << "Facultades que atiende: ";
-            getline(cin, facultadesqueAtiende);
-            laboratorios.emplace_back(codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende);
+            int cantidad;
+            bool validInput = false;
+            cout << "\033[1;97m";
+            while (!validInput)
+            {
+                cout << "Ingrese el número de laboratorios que desea registrar: ";
+                cin >> cantidad;
+                if (cantidad <= 0 || cin.fail())
+                {
+                    cout << "La cantidad debe ser un número positivo. Por favor, intente nuevamente." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+                else
+                {
+                    validInput = true;
+                }
+            }
+            cout << "\033[0m";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "\033[1;97m";
+            for (int i = 0; i < cantidad; ++i)
+            {
+                string codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende;
+                cout << "Ingrese los datos del laboratorio #" << (i + 1) << endl;
+                cout << "Ingrese el codigo laboratorio: ";
+                getline(cin, codigo);
+                cout << "Ingrese el Nombre del Laboratorio: ";
+                getline(cin, nombre);
+                cout << "Ingrese el Encargado del Laboratorio: ";
+                getline(cin, encargado);
+                cout << "Ingrese a que Facultad pertenece: ";
+                getline(cin, facultad);
+                cout << "Ingrese la Ubicacion del Laboratorio: ";
+                getline(cin, ubicacion);
+                cout << "Facultades que atiende: ";
+                getline(cin, facultadesqueAtiende);
+                laboratorios.emplace_back(codigo, nombre, encargado, facultad, ubicacion, facultadesqueAtiende);
+            }
+            GuardarLaboratorios(laboratorios);
+            GuardarID(laboratorios);
         }
-        GuardarLaboratorios(laboratorios);
-        GuardarID(laboratorios);
+        catch (const exception &e)
+        {
+            cerr << "Error: " << e.what() << endl;
+        }
     }
 
     void GuardarLaboratorios(const vector<Laboratorio> &laboratorios) override
@@ -87,7 +110,7 @@ public:
 
     void GuardarID(const vector<Laboratorio> &laboratorios) override
     {
-        
+
         ofstream archivo("IDyNombre.txt", ios::app);
         for (const Laboratorio &labo : laboratorios)
         {
@@ -118,7 +141,7 @@ public:
         while (!archivo.eof())
         {
             getline(archivo, texto);
-            cout << "\033[1;97m" << texto << "\033[0m"<< endl;
+            cout << "\033[1;97m" << texto << "\033[0m" << endl;
         }
         archivo.close();
     }

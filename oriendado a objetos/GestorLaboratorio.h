@@ -55,37 +55,62 @@ void Encargado::GuardarEncargados(const vector<Encargado> &enca)
     ofstream archivo("encargados.txt", ios::app);
     for (const Encargado &encargado : encargados)
     {
-        archivo<<"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl;
+        archivo << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
         archivo << "|ID: " << encargado.codigo << "|Nombres y Apellidos: " << encargado.nombreyApellidos << "|Numero: " << encargado.numero << "|Laboratorio Asignado: " << encargado.laboratorioAsignado << endl;
         archivo << "|Fecha de Ingreso: " << encargado.fechadeIngreso << "|Fecha de Salida: " << encargado.fechadeSalida << endl;
-        archivo<<"------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"<<endl;
+        archivo << "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" << endl;
     }
     archivo.close();
 }
 void Encargado::IngresodeEncargados(vector<Encargado> &enca)
 {
-    int x;
-    cout << "Ingrese el numero de encargados que desea registrar: ";
-    cin >> x;
-    for (int i = 0; i < x; i++)
+    try
     {
-        Encargado enca;
+        int cantidad;
+        bool validInput = false;
+        cout << "\033[1;97m";
+        while (!validInput)
+        {
+            cout << "Ingrese el número de encargados  que desea registrar: ";
+            cin >> cantidad;
+            if (cantidad <= 0 || cin.fail())
+            {
+                cout << "La cantidad debe ser un número positivo. Por favor, intente nuevamente." << endl;
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
+            else
+            {
+                validInput = true;
+            }
+        }
+        cout << "\033[0m";
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Ingrese el codigo del encargado: ";
-        getline(cin, enca.codigo);
-        cout << "Ingrese el nombre y apellidos del encargado: ";
-        getline(cin, enca.nombreyApellidos);
-        cout << "Ingrese el numero del encargado: ";
-        getline(cin, enca.numero);
-        cout << "Ingrese el laboratorio asignado al encargado: ";
-        getline(cin, enca.laboratorioAsignado);
-        cout << "Ingrese la fecha de ingreso del encargado: ";
-        getline(cin, enca.fechadeIngreso);
-        cout << "Ingrese la fecha de salida del encargado: ";
-        getline(cin, enca.fechadeSalida);
-        encargados.push_back(enca);
+        cout << "\033[1;97m";
+        for (int i = 0; i < cantidad; i++)
+        {
+            Encargado enca;
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cout << "Ingrese el codigo del encargado: ";
+            getline(cin, enca.codigo);
+            cout << "Ingrese el nombre y apellidos del encargado: ";
+            getline(cin, enca.nombreyApellidos);
+            cout << "Ingrese el numero del encargado: ";
+            getline(cin, enca.numero);
+            cout << "Ingrese el laboratorio asignado al encargado: ";
+            getline(cin, enca.laboratorioAsignado);
+            cout << "Ingrese la fecha de ingreso del encargado: ";
+            getline(cin, enca.fechadeIngreso);
+            cout << "Ingrese la fecha de salida del encargado: ";
+            getline(cin, enca.fechadeSalida);
+            encargados.push_back(enca);
+        }
+        Encargado::GuardarEncargados(encargados);
     }
-    Encargado::GuardarEncargados(encargados);
+    catch (const exception &e)
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
 }
 void Encargado::MostrarEncargados(const vector<Encargado> &enca)
 {
@@ -104,28 +129,54 @@ class PrivilegiosElemento
 public:
     void IngresodeElementos(vector<Elementos> &elem)
     {
-        
-        int x;
-        cout << "Ingrese el numero de elementos que desea registrar: ";
-        cin >> x;
-        for (int i = 0; i < x; i++)
+        try
         {
-            Elementos elem;
-            cout << "Ingrese el codigo del elemento: ";
-            cin >> elem.codigo;
+            int cantidad;
+            bool validInput = false;
+            cout << "\033[1;97m";
+            while (!validInput)
+            {
+                cout << "Ingrese el número de elementos que desea registrar: ";
+                cin >> cantidad;
+                if (cantidad <= 0 || cin.fail())
+                {
+                    cout << "La cantidad debe ser un número positivo. Por favor, intente nuevamente." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+                else
+                {
+                    validInput = true;
+                }
+            }
+            cout << "\033[0m";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Ingrese el nombre del elemento: ";
-            getline(cin, elem.nombre);
-            cout << "Ingrese el estado del elemento: ";
-            getline(cin, elem.estado);
-            cout << "Ingrese la caducidad del elemento: ";
-            getline(cin, elem.caducidad);
-            cout << "Ingrese la cantidad del elemento: ";
-            cin >> elem.cantidad;
-            elementos.push_back(elem);
+            cout << "\033[1;97m";
+            for (int i = 0; i < cantidad; ++i)
+            {
+                Elementos elemento;
+                cout << "Ingrese el código del elemento: ";
+                cin >> elemento.codigo;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Ingrese el nombre del elemento: ";
+                getline(cin, elemento.nombre);
+                cout << "Ingrese el estado del elemento: ";
+                getline(cin, elemento.estado);
+                cout << "Ingrese la caducidad del elemento: ";
+                getline(cin, elemento.caducidad);
+                cout << "Ingrese la cantidad del elemento: ";
+                cin >> elemento.cantidad;
+                elem.push_back(elemento);
+            }
+            cout << "\033[0m";
+            GuardarElementos(elementos);
         }
-        GuardarElementos(elementos);
+        catch (const exception &e)
+        {
+            cerr << "Error: " << e.what() << endl;
+        }
     }
+
     void GuardarElementos(vector<Elementos> &elem)
     {
         ofstream archivo("elementos.txt", ios::app);
@@ -136,7 +187,7 @@ public:
         archivo.close();
         ;
     }
-    void MostrarElementosporCodigo( vector<Elementos> &elem)
+    void MostrarElementosporCodigo(vector<Elementos> &elem)
     {
         ifstream archivo("elementos.txt");
         if (!archivo.is_open())
@@ -175,7 +226,7 @@ public:
 class PrivilegiosEquipos
 {
 public:
-    void GuardarEquipos( vector<Equipo> &equi)
+    void GuardarEquipos(vector<Equipo> &equi)
     {
         ofstream archivo("equipos.txt", ios::app);
         for (const Equipo &equipo : equipos)
@@ -186,27 +237,52 @@ public:
     }
     void IngresodeEquipos(vector<Equipo> &equi)
     {
-        int x;
-        cout << "Ingrese el numero de equipos que desea registrar: ";
-        cin >> x;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        for (int i = 0; i < x; i++)
+        try
         {
-            Equipo equi;
-            cout << "Ingrese el codigo del equipo: ";
-            cin >> equi.codigo;
+            int cantidad;
+            bool validInput = false;
+            cout << "\033[1;97m";
+            while (!validInput)
+            {
+                cout << "Ingrese el número de elementos que desea registrar: ";
+                cin >> cantidad;
+                if (cantidad <= 0 || cin.fail())
+                {
+                    cout << "La cantidad debe ser un número positivo. Por favor, intente nuevamente." << endl;
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                }
+                else
+                {
+                    validInput = true;
+                }
+            }
+            cout << "\033[0m";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "Ingrese el nombre del equipo: ";
-            getline(cin, equi.nombre);
-            cout << "Ingrese el estado del equipo: ";
-            getline(cin, equi.estado);
-            cout << "Ingrese la cantidad de equipos: ";
-            cin >> equi.cantidad;
-            equipos.push_back(equi);
+            cout << "\033[1;97m";
+            for (int i = 0; i < cantidad; ++i)
+            {
+                Equipo equipo;
+                cout << "Ingrese el código del equipo: ";
+                cin >> equipo.codigo;
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                cout << "Ingrese el nombre del equipo: ";
+                getline(cin, equipo.nombre);
+                cout << "Ingrese el estado del equipo: ";
+                getline(cin, equipo.estado);
+                cout << "Ingrese la cantidad del equipo: ";
+                cin >> equipo.cantidad;
+                equi.push_back(equipo);
+            }
+            cout << "\033[0m";
+            GuardarEquipos(equipos);
         }
-        GuardarEquipos(equipos);
+        catch (const exception &e)
+        {
+            cerr << "Error: " << e.what() << endl;
+        }
     }
-    void MostrarEquiposporID( vector<Equipo> &equi)
+    void MostrarEquiposporID(vector<Equipo> &equi)
     {
 
         ifstream archivo("equipos.txt");
