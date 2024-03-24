@@ -1,0 +1,5 @@
+127.- ID: 127, Nombre: Laboratorio de Sanidad Animal
+128.- ID: 128, Nombre: Laboratorio de reproduccion e inseminacion artificial
+129.- ID: 129, Nombre: Laboratorio de nutricion animal
+130.- ID: 130, Nombre: Laboratorio de Psicultura
+131.- ID: 131, Nombre: Laboratorio de Pastos

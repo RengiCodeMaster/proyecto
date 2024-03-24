@@ -101,8 +101,8 @@ public:
         for (const Laboratorio &labo : laboratorios)
         {
             archivo << "-----------------------------------------------------------------------------------------------------------------------------------------------" << endl;
-            archivo << labo.getCodigo() << "|Nombre: " << labo.getNombre() << "|Encargado: " << labo.getEncargado() << "|Facultad: " << labo.getFacultad() << endl;
-            archivo << labo.getUbicacion() << "|Facultades que atiende: " << labo.getFacultadesqueAtiende() << endl;
+            archivo << "| ID: " << labo.getCodigo() << "|Nombre: " << labo.getNombre()<< "| Aforo: " << labo.getAforo() << "|Encargado: " << labo.getEncargado() << endl;
+            archivo << "|Facultad: " << labo.getFacultad() << "|Ubicacion: " << labo.getUbicacion() << "|Facultades que atiende: " << labo.getFacultadesqueAtiende() << endl;
             archivo << "-----------------------------------------------------------------------------------------------------------------------------------------------" << endl;
         }
         archivo.close();

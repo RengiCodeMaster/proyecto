@@ -3,7 +3,8 @@
 #include <limits>
 #include <fstream>
 #include "laboratorios.h"
-#include"GestorLaboratorio.h"
+#include "GestorLaboratorio.h"
+#include "Encargados.h"
 using namespace std;
 int opcion;
 void salir()
@@ -94,7 +95,7 @@ int main()
         {
             ControldeSistema labo;
             labo.MostraID(laboratorios);
-            PrivilegiosElemento elem;
+            Elementos elem;
             elem.MostrarElementosporCodigo(elementos);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
@@ -102,18 +103,19 @@ int main()
         }
         case 7:
         {
+            system("cls");
             ControldeSistema labo;
             labo.MostraID(laboratorios);
-            PrivilegiosEquipos equi;
-            equi.MostrarEquiposporID(equipos);
+            Equipo equi;
+            equi.MostrarEquiposporCodigo(equipos);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;
             break;
         }
         case 8:
         {
-            Encargado enca;
             system("cls");
+            Encargado enca;
             enca.MostrarEncargados(encargados);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
             cin >> opcion;

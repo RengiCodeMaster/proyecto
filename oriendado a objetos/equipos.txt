@@ -1,0 +1,58 @@
+129.-ID 129,Nombre: Agitador Magnetico,Estado: Regular,Cantidad: 2
+129.-ID 129,Nombre: Balanza Analitica,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Balanza de Precision,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Bomba de vacio o de alta precision,Estado: Bueno,Cantidad: 2
+129.-ID 129,Nombre: Calorimetro,Estado: Bueno,Cantidad: 2
+129.-ID 129,Nombre: Centrifuga,Estado: Regular,Cantidad: 3
+129.-ID 129,Nombre: Coche metalico para transporte en general,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Cocina Electrica,Estado: Inactivo,Cantidad: 1
+129.-ID 129,Nombre: Balon de Oxigeno,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Destilador de agua,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Destilador de nitrogeno,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Digestor,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Equipo de espectrofometro,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Estufa electrica ,Estado: Regular,Cantidad: 3
+129.-ID 129,Nombre: Extractor de grasa y/o aceite,Estado: regular,Cantidad: 3
+129.-ID 129,Nombre: Molinos en general,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Mufla electrica,Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Peachimetro,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Refrigeradora electrica domestica,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Desecador(otros),Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Separador(otros),Estado: Regular,Cantidad: 1
+129.-ID 129,Nombre: Digestor de fibra,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Equipo de ba o Maria,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Calentador tipo plancha,Estado: Bueno,Cantidad: 1
+129.-ID 129,Nombre: Cocina con plataforma,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Artesas de Fibra de Vidrio,Estado: Regular,Cantidad: 9
+130.-ID 130,Nombre: Balanza Electronica,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Bomba Aireadora,Estado: Bueno,Cantidad: 2
+130.-ID 130,Nombre: Camara fotografica Digital,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Concentrador de Oxigeno,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Electrobomba,Estado: Regular,Cantidad: 2
+130.-ID 130,Nombre: GPS,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Motobomba,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Oximetro,Estado: Bueno,Cantidad: 1
+130.-ID 130,Nombre: Repisa ,Estado: 3 Regulares y 2 Bueno,Cantidad: 5
+130.-ID 130,Nombre: Tanque de Polietileno para agua,Estado: 1 Regular y 2 Bueno,Cantidad: 3
+130.-ID 130,Nombre: Acuarios,Estado: Bueno,Cantidad: 8
+130.-ID 130,Nombre: Balanza Mecanica,Estado: Regular,Cantidad: 2
+127.-ID 127,Nombre: Analizador Bioquimico,Estado: Regular,Cantidad: 1
+127.-ID 127,Nombre: Autoclave,Estado: Bueno,Cantidad: 2
+127.-ID 127,Nombre: Balanza Analitica,Estado: Bueno,Cantidad: 2
+127.-ID 127,Nombre: Balanza Electronica de Precision,Estado: Regular,Cantidad: 1
+127.-ID 127,Nombre: Balanza Mecanica,Estado: Bueno,Cantidad: 1
+127.-ID 127,Nombre: Centrifuga,Estado: 2 Regular y 2 Bueno,Cantidad: 4
+127.-ID 127,Nombre: Hervidora Electrica,Estado: Bueno,Cantidad: 11311.-ID 1311,Nombre: Balanza Mecanica,Estado: Regular,Cantidad: 2
+131.-ID 131,Nombre: Balanza Gramera,Estado: Regular,Cantidad: 1
+131.-ID 131,Nombre: Bomba fumigadora tipo mochila,Estado: Regular,Cantidad: 3
+131.-ID 131,Nombre: Determinador de humedad de grano,Estado: 1 Bueno, 2 Regular,Cantidad: 3
+131.-ID 131,Nombre: Determinador de humedad de suelo,Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Balanza Mecanica,Estado: Regular,Cantidad: 2
+131.-ID 131,Nombre: Distanciometro,Estado: Regular,Cantidad: 1
+131.-ID 131,Nombre: Equipo de posicionamiento-GPS,Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Estufa electrica para laboratorio,Estado: 2 Buenos y 1 Regular,Cantidad: 3
+131.-ID 131,Nombre: Incubadora de laboratorio,Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Limpiadora de semillas,Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Maquina desbrozadora(modo cultivador),Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Medidor de radiacion,Estado: Bueno,Cantidad: 1
+131.-ID 131,Nombre: Motosierra de hoja larga,Estado: Bueno,Cantidad: 1
