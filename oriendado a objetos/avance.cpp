@@ -7,6 +7,9 @@
 #include "Encargados.h"
 using namespace std;
 int opcion;
+void clearScreen() {
+    cout << "\033[2J\033[1;1H";  
+}
 void salir()
 {
     cout << "Gracias por usar el sistema" << endl;
@@ -40,7 +43,7 @@ int main()
     setlocale(LC_ALL, "spanish.UTF-8");
     do
     {
-        system("cls");
+        clearScreen();
         menu1();
         cout << "\033[1;97mIngrese la opcion que desea: \033[0m";
         cin >> opcion;
@@ -48,7 +51,7 @@ int main()
         {
         case 1:
         {
-            system("cls");
+            clearScreen();
             Encargado enca;
             enca.IngresodeEncargados(encargados);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -57,7 +60,7 @@ int main()
         }
         case 2:
         {
-            system("cls");
+            clearScreen();
             ControldeSistema labo;
             labo.IngresodeLaboratorios(laboratorios);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -66,7 +69,7 @@ int main()
         }
         case 3:
         {
-            system("cls");
+            clearScreen();
             PrivilegiosElemento elem;
             elem.IngresodeElementos(elementos);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -75,7 +78,7 @@ int main()
         }
         case 4:
         {
-            system("cls");
+            clearScreen();
             PrivilegiosEquipos equi;
             equi.IngresodeEquipos(equipos);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -84,7 +87,7 @@ int main()
         }
         case 5:
         {
-            system("cls");
+            clearScreen();
             ControldeSistema labo;
             labo.MostrarLaboratorios(laboratorios);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -93,6 +96,7 @@ int main()
         }
         case 6:
         {
+            clearScreen();
             ControldeSistema labo;
             labo.MostraID(laboratorios);
             Elementos elem;
@@ -103,7 +107,7 @@ int main()
         }
         case 7:
         {
-            system("cls");
+            clearScreen();
             ControldeSistema labo;
             labo.MostraID(laboratorios);
             Equipo equi;
@@ -114,7 +118,7 @@ int main()
         }
         case 8:
         {
-            system("cls");
+            clearScreen();
             Encargado enca;
             enca.MostrarEncargados(encargados);
             cout << "\033[1;97m\nPresione 1 para volver al menu o 0 para salir del sistema: \033[0m";
@@ -123,19 +127,18 @@ int main()
         }
         case 9:
         {
-            system("cls");
+            clearScreen();
             salir();
             break;
         }
         default:
         {
-            system("cls");
+            clearScreen();
             cout << "\033[1;31m***Opcion no valida***\033[0m" << endl;
             break;
         }
         }
     } while (opcion != 0);
-    system("pause");
 
     return 0;
 }

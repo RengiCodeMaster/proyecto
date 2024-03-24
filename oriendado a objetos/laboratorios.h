@@ -127,7 +127,7 @@ public:
         while (!archivo.eof())
         {
             getline(archivo, texto);
-            cout << texto << endl;
+            cout <<"\033[1;97m" << texto << "\033[0m"<< endl;
         }
         archivo.close();
     }
