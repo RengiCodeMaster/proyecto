@@ -6,7 +6,7 @@ using namespace std;
 
 class Laboratorio
 {
-protected:
+private:
     string aforo;
     string codigo;
     string nombre;
@@ -17,7 +17,6 @@ protected:
 
 public:
     Laboratorio() : aforo(), codigo(), nombre(), encargado(), facultad(), ubicacion(), facultadesqueAtiende() {}
-
     Laboratorio(const string &codigo, const string &nombre, const string &encargado, const string &facultad, const string &ubicacion, const string &facultadesqueAtiende)
         : codigo(codigo), nombre(nombre), encargado(encargado), facultad(facultad), ubicacion(ubicacion), facultadesqueAtiende(facultadesqueAtiende) {}
 
@@ -133,7 +132,7 @@ public:
     }
 
     void MostrarLaboratorios(const vector<Laboratorio> &laboratorios) override
-    {
+    {  
         cout << "\033[1;31m***LABORATORIOS DISPONIBLES***\033[0m" << endl;
 
         ifstream archivo("laboratorios.txt");

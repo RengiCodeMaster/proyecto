@@ -50,3 +50,4 @@
 131.-ID 131,Nombre: Control de malezas,Estado: Liquido,Caducidad: 20/01/2024,Cantidad: 6
 131.-ID 131,Nombre: Abonos organicos,Estado: Solido,Caducidad: 25/02/2024,Cantidad: 4
 131.-ID 131,Nombre: Tratamientos para forraje,Estado: Liquido,Caducidad: 30/03/2024,Cantidad: 5
+127.-ID 127,Nombre: agua,Estado: liquido,Caducidad: no vence,Cantidad: 12

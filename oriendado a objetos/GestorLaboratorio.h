@@ -16,7 +16,8 @@ private:
 
 public:
     Elementos() : codigo(), nombre(), estado(), caducidad(), cantidad() {}
-    friend PrivilegiosElemento;
+    friend class PrivilegiosElemento;
+    vector<Elementos> elementos;
     void MostrarElementosporCodigo(vector<Elementos> &elem)
     {
         ifstream archivo("elementos.txt");
@@ -27,7 +28,7 @@ public:
         }
         int id;
         cout << "\033[1;97m";
-        while (cout << "Ingrese el ID para mostrar los equipos registrados con ese ID (o 0 para salir): " && cin >> id && id != 0)
+        while (cout << "Ingrese el ID para mostrar los elementos registrados con ese ID (o 0 para salir): " && cin >> id && id != 0)
         {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             bool encontrado = false;
@@ -45,15 +46,14 @@ public:
             }
             if (!encontrado)
             {
-
-                cout << "No se encontraron equipos registrados con el ID " << id << "." << endl;
+                cout << "No se encontraron elementos registrados con el ID " << id << "." << endl;
             }
         }
         cout << "\033[0m";
         archivo.close();
     }
 };
-vector<Elementos> elementos;
+
 class Equipo
 {
 private:
@@ -64,10 +64,10 @@ private:
 
 public:
     Equipo() : codigo(), nombre(), estado(), cantidad() {}
-    friend PrivilegiosEquipos;
+    friend class PrivilegiosEquipos;
+    vector<Equipo> equipos;
     void MostrarEquiposporCodigo(vector<Equipo> &equi)
     {
-
         ifstream archivo("equipos.txt");
         if (!archivo.is_open())
         {
@@ -101,11 +101,20 @@ public:
         archivo.close();
     }
 };
-vector<Equipo> equipos;
 
 class PrivilegiosElemento
 {
 public:
+    void GuardarElementos(vector<Elementos> &elem)
+    {
+        ofstream archivo("elementos.txt", ios::app);
+        for (const Elementos &ele : elem)
+        {
+            archivo << ele.codigo << ".-ID " << ele.codigo << ",Nombre: " << ele.nombre << ",Estado: " << ele.estado << ",Caducidad: " << ele.caducidad << ",Cantidad: " << ele.cantidad << endl;
+        }
+        archivo.close();
+        ;
+    }
     void IngresodeElementos(vector<Elementos> &elem)
     {
         try
@@ -148,23 +157,12 @@ public:
                 elem.push_back(elemento);
             }
             cout << "\033[0m";
-            GuardarElementos(elementos);
+            GuardarElementos(elem);
         }
         catch (const exception &e)
         {
             cerr << "Error: " << e.what() << endl;
         }
-    }
-
-    void GuardarElementos(vector<Elementos> &elem)
-    {
-        ofstream archivo("elementos.txt", ios::app);
-        for (const Elementos &ele : elementos)
-        {
-            archivo << ele.codigo << ".-ID " << ele.codigo << ",Nombre: " << ele.nombre << ",Estado: " << ele.estado << ",Caducidad: " << ele.caducidad << ",Cantidad: " << ele.cantidad << endl;
-        }
-        archivo.close();
-        ;
     }
 };
 class PrivilegiosEquipos
@@ -173,7 +171,7 @@ public:
     void GuardarEquipos(vector<Equipo> &equi)
     {
         ofstream archivo("equipos.txt", ios::app);
-        for (const Equipo &equipo : equipos)
+        for (const Equipo &equipo : equi)
         {
             archivo << equipo.codigo << "|ID: " << equipo.codigo << "|Nombre: " << equipo.nombre << "|Estado: " << equipo.estado << "|Cantidad: " << equipo.cantidad << endl;
         }
@@ -188,7 +186,7 @@ public:
             cout << "\033[1;97m";
             while (!validInput)
             {
-                cout << "Ingrese el número de elementos que desea registrar: ";
+                cout << "Ingrese el número de equipos que desea registrar: ";
                 cin >> cantidad;
                 if (cantidad <= 0 || cin.fail())
                 {
@@ -219,7 +217,7 @@ public:
                 equi.push_back(equipo);
             }
             cout << "\033[0m";
-            GuardarEquipos(equipos);
+            GuardarEquipos(equi);
         }
         catch (const exception &e)
         {
